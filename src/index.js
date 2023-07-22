@@ -3,15 +3,20 @@ import { realDictionary2 } from './dictionary2.js';
 // for testing purposes, make sure to use the test dictionary
 console.log('test dictionary:', testDictionary);
 
-const dictionary = realDictionary2;
+const dictionary = realDictionary;
+const dictionary2 = realDictionary2;
 const state = {
-  secret: dictionary[Math.floor(Math.random() * dictionary.length)],
+  secret: dictionary2[Math.floor(Math.random() * dictionary2.length)],
   grid: Array(6)
     .fill()
     .map(() => Array(5).fill('')),
   currentRow: 0,
   currentCol: 0,
 };
+
+const buttons = document.querySelectorAll('.btn');
+const delete_btn = document.querySelector('.delete');
+const enter_btn = document.querySelector('.enter');
 
 function drawGrid(container) {
   const grid = document.createElement('div');
@@ -162,11 +167,46 @@ function removeLetter() {
   state.currentCol--;
 }
 
+function dlt(){
+  delete_btn.addEventListener('click', () =>{
+    removeLetter();
+    updateGrid();
+  })
+}
+
+function add(){
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      addLetter(btn.innerText);
+      updateGrid();
+    })
+  })
+}
+
+function enter() {
+  enter_btn/addEventListener('click', () => {
+    if (state.currentCol === 5) {
+      const word = getCurrentWord();
+      if (isWordValid(word)) {
+        revealWord(word);
+        state.currentRow++;
+        state.currentCol = 0;
+      } else {
+        alert('Not a valid word.');
+      }
+    }
+    updateGrid();
+  })
+}
+
 function startup() {
   const game = document.getElementById('game');
   drawGrid(game);
 
   registerKeyboardEvents();
+  dlt();
+  add();
+  enter();
 }
 
 startup();

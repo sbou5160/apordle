@@ -66,6 +66,52 @@ body {
   }
 }
 
+.keyboard{
+  display : flex;
+  flex-direction: column;
+  align-items: center;
+}
+button{
+  background-color: #818384;
+  border: none;
+  border-color: #818384;
+  display: inline-block;
+  padding: .5rem 1rem;
+  margin: .3rem;
+  font-size: 1.3rem;
+  color: #fff;
+  width: 52px;
+  height: 52px;
+  border-radius: .5rem;
+  text-transform: uppercase;
+  align-items: center;
+}
+
+.delete,
+.enter {
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+.delete { width: 100px; }
+.enter { width: 100px; }
+
+.textarea {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+textarea{
+  width: 100%;
+  height: 150px;
+  resize: none;
+  padding: .5rem;
+  font-size: 1.2rem;
+  outline: none;
+  border: 2px solid #818384;
+  border-radius: .5rem;
+}
+
 .title {
   color: rgb(255, 255, 255);
   text-align: center;

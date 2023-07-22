@@ -32,7 +32,6 @@ export const realDictionary2 = [
    "chara",
    "fifty",
    "rolla",
-   "collat",
    "range",
    "armor",
    "choke",

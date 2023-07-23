@@ -57,6 +57,7 @@ function registerKeyboardEvents() {
     if (key === 'Enter') {
       if (state.currentCol === 5) {
         const word = getCurrentWord();
+        console.log(word);
         if (isWordValid(word)) {
           revealWord(word);
           state.currentRow++;
@@ -188,9 +189,10 @@ function add(){
 function enter() {
   enter_btn.addEventListener('click', () => {
     if (state.currentCol === 5) {
-      const word2 = getCurrentWord();
-      if (isWordValid(word2)) {
-        revealWord(word2);
+      const word = getCurrentWord();
+      console.log(word);
+      if (isWordValid(word)) {
+        revealWord(word);
         state.currentRow++;
         state.currentCol = 0;
       } else {

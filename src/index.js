@@ -129,7 +129,7 @@ function revealWord(guess) {
       } else {
         if (letter === state.secret[i]) {
           box.classList.add('right');
-          document.button.style.backgroundColor = "#538d4e";
+          html.button.style.backgroundColor = "#538d4e";
         } else if (state.secret.includes(letter)) {
           box.classList.add('wrong');
         } else {

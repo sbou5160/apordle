@@ -1,5 +1,6 @@
 import { testDictionary, realDictionary } from './dictionary.js';
 import { realDictionary2 } from './dictionary2.js';
+import sheet from './style.css' assert { type: 'css' };
 // for testing purposes, make sure to use the test dictionary
 console.log('test dictionary:', testDictionary);
 
@@ -127,6 +128,7 @@ function revealWord(guess) {
       } else {
         if (letter === state.secret[i]) {
           box.classList.add('right');
+          document.button.style.backgroundColor = "#538d4e";
         } else if (state.secret.includes(letter)) {
           box.classList.add('wrong');
         } else {
@@ -184,11 +186,11 @@ function add(){
 }
 
 function enter() {
-  enter_btn/addEventListener('click', () => {
+  enter_btn.addEventListener('click', () => {
     if (state.currentCol === 5) {
-      const word = getCurrentWord();
-      if (isWordValid(word)) {
-        revealWord(word);
+      const word2 = getCurrentWord();
+      if (isWordValid(word2)) {
+        revealWord(word2);
         state.currentRow++;
         state.currentCol = 0;
       } else {

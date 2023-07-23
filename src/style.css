@@ -152,8 +152,6 @@ hr {
   border-width: 2.5px;
 }
 
-
-
 .footer {
   display: flex;
   justify-content: center;
@@ -167,10 +165,3 @@ hr {
   margin-right: 1rem;
 }
 
-.social-media-link {
-  display: flex;
-  fill: white;
-  width: 25px;
-  height: 25px;
-  margin-right: 0.75rem;
-}

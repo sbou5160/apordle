@@ -1,7 +1,6 @@
 import { testDictionary, realDictionary } from './dictionary.js';
 import { realDictionary2 } from './dictionary2.js';
 import sheet from './style.css' assert { type: 'css' };
-// for testing purposes, make sure to use the test dictionary
 console.log('test dictionary:', testDictionary);
 
 const dictionary = realDictionary;
@@ -129,7 +128,6 @@ function revealWord(guess) {
       } else {
         if (letter === state.secret[i]) {
           box.classList.add('right');
-          html.button.style.backgroundColor = "#538d4e";
         } else if (state.secret.includes(letter)) {
           box.classList.add('wrong');
         } else {
